@@ -108,7 +108,7 @@ class Login {
     if (!checkPasswordComplexity(this.password)) {  
         return "Password is not correctly formatted"; 
     }  
-    return  "Username and password  correctly formatted the user has successfully logged in";
+    return  "Username and password successfully captured";
 }
 
      // Method that verifies login details
@@ -130,6 +130,5 @@ class Login {
     
     
    
-    
 }
 
