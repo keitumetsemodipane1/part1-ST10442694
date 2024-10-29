@@ -33,7 +33,7 @@ public class LoginSystem {
 
         String tempUsername;
         do {
-            System.out.println("Please enter your username ");
+            System.out.println("Please enter your username. ");
             tempUsername = sc.nextLine(); // Read the username
             user.setUserName(tempUsername); // Set username
         } while (!user.CheckUsername(tempUsername)); // Checks the username
@@ -130,7 +130,7 @@ public class LoginSystem {
                     if (taskDuration <= 0) {
                         JOptionPane.showMessageDialog(dialog, "Please enter a positive number.");
                     } else {
-                        break; // Valid input
+                        break; // Valid inputt
                     }
                 } 
             } while (true);
