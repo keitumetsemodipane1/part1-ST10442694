@@ -1,7 +1,7 @@
 package com.mycompany.loginsystem;  // Ensure the package name matches the LoginSystem class
 
 import java.util.List;
-import java.util.*;
+import javax.swing.JOptionPane;
 
 import javax.swing.*;
 
@@ -21,43 +21,39 @@ class Task {
         this.taskDuration = taskduration;
         this.taskStatus = taskstatus;
     }
-
+   // Method that checks and set the task description
    public boolean checkTaskDescription(String description) {
     if (description.length() <= 50) {
         this.taskDescription = description; // Set the task description
         JOptionPane.showMessageDialog(null, "Task successfully captured");
-        return true; // Indicate success
+        return true; 
     } else {
         JOptionPane.showMessageDialog(null, " Please enter a  description of less than 50 characters ");
-        return false; // Indicate failure
+        return false; 
     }
 }
 
-
+     // Method to create Task ID
     public String createTaskID() {
-     // Get the first two letters of the task name
-   String letters;
-if (taskName.length() >= 2) {
-    letters = taskName.substring(0, 2).toUpperCase();
-} else {
-    letters = taskName.toUpperCase();
-}
-
-    // Get the task number as a string
-    String taskNum = Integer.toString(taskNumber);
-    
-    // Get the last three letters of the developer details
-String threeLetters;
-if (developerDetails.length() < 3) {
-    threeLetters = developerDetails.toUpperCase();
-} else {
-    threeLetters = developerDetails.substring(developerDetails.length() - 3).toUpperCase();
-}
-
-       // Combine everything into the Task ID
-    return letters + ":" + taskNum + ":" + threeLetters;
+     
+   String letters;// Get the first two letters of the task name
+      if (taskName.length() >= 2) {
+    letters = taskName.substring(0, 2).toUpperCase();//Capitalize the first two letters
+     } else {
+    letters = taskName.toUpperCase();// Capitalize if the name is shorter
+   }
+      
+    String taskNum = Integer.toString(taskNumber);  // Get the task number as a string
+     String threeLetters; // Gets the last three letters of the developer details
+         if (developerDetails.length() < 3) {
+         threeLetters = developerDetails.toUpperCase();
+          } else {
+         threeLetters = developerDetails.substring(developerDetails.length() - 3).toUpperCase();
+          }   
+          return letters + ":" + taskNum + ":" + threeLetters; // It combines  everything into the Task ID
     }
 
+    //This method gives you the task information in a string.
    public String printTaskDetails() {
     String details = "Task Number: " + taskNumber + "\n" +
                      "Task Name: " + taskName + "\n" +
@@ -66,15 +62,15 @@ if (developerDetails.length() < 3) {
                      "Duration: " + taskDuration + " hrs\n" +
                      "Status: " + taskStatus + "\n" +
                      "Task ID: " + createTaskID();
-    return details;
-}
-
+      return details;
+     }
+// Method to calculate the total duration of tasks in a list
  public static int returnTotalHours(List<Task> tasks) {
-        int totalHours = 0;
+        int totalHours = 0;// Initialize total hours counter to 0 
         for (Task task : tasks) {
-            totalHours += task.taskDuration; // Directly accessing the field
+            totalHours += task.taskDuration; //Total the hours for every task.
         }
-        return totalHours;
+        return totalHours;// Return the total duration
     
 }
 }
