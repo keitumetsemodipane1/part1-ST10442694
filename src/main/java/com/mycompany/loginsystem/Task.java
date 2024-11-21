@@ -121,13 +121,7 @@ public class Task {
     
    
     
-     /**
-     * Adds a new task to the system.
-     * 
-     * @param taskName The name of the task.
-     * @param developerDetails The developer assigned to the task.
-     * @param taskDuration The duration of the task in hours.
-     * @param taskStatus The current status of the task.*/
+     
     public static void addTask(String taskName, String developerDetails, int taskDuration, String taskStatus) {
         taskNames.add(taskName);
         developerNames.add(developerDetails);

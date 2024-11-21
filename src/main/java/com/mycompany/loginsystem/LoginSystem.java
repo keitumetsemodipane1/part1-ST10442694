@@ -173,11 +173,11 @@ public class LoginSystem {
                     break;
 
                 case "3": // Quit the program
-                    exit = true; // Set exit flag to true, terminating the while loop
+                    exit = true; 
                     break;
 
                 case "4": // Get and display the longest task
-                    // Call the Task class's getLongestTask method and display the result in a dialog
+                    
                     JOptionPane.showMessageDialog(null, Task.getLongestTask());
                     break;
 
